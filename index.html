@@ -7,7 +7,18 @@
     <title>mprac</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div x-data="data">
+      <h1 x-text="numbersText" id="numbers">...</h1>
+      <input
+        id="input"
+        @input="onInput($el)"
+        autofocus
+        autocomplete="off"
+        type="number"
+        pattern="[0-9]*"
+      />
+    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
