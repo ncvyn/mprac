@@ -1,3 +1,10 @@
+document.querySelector('#app').innerHTML = /*html*/ `
+  <div x-data="data">
+    <h1 x-text="numbersText" id="numbers">...</h1>
+    <input id="input" @input="onInput($el)" autofocus autocomplete="off" type="number" pattern="[0-9]*" >
+  </div>
+`;
+
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 
@@ -31,12 +38,5 @@ Alpine.data('data', () => ({
     }
   },
 }));
-
-document.querySelector('#app').innerHTML = /*html*/ `
-  <div x-data="data">
-    <h1 x-text="numbersText" id="numbers">...</h1>
-    <input id="input" @input="onInput($el)" autofocus autocomplete="off" type="number" pattern="[0-9]*" >
-  </div>
-`;
 
 Alpine.start();
