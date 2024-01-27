@@ -29,6 +29,8 @@ Alpine.data('data', () => ({
 
   onInput(element) {
     if (element.value == this.answer) {
+      element.value = '';
+
       numbers = Array.from(Array(5), (_) => randomInteger(1, 50));
       this.numbers = numbers;
       this.numbersText = this.numbers.join('+');
