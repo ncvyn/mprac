@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 
-let numbers = Array.from(Array(5), (_) => randomInteger(1, 50));
+let numbers = Array.from(Array(5), (_) => rng(1, 50));
 
 Alpine.data('data', () => ({
   numbers: numbers,
@@ -14,7 +14,7 @@ Alpine.data('data', () => ({
     if (element.value == this.answer) {
       element.value = '';
 
-      numbers = Array.from(Array(5), (_) => randomInteger(1, 50));
+      numbers = Array.from(Array(5), (_) => rng(1, 50));
       this.numbers = numbers;
       this.numbersText = this.numbers.join('+');
       this.answer = numbers.reduce((acc, x) => {
@@ -32,6 +32,6 @@ Alpine.start();
  * @param {int} max
  * @returns {int}
  */
-function randomInteger(min, max) {
+function rng(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
